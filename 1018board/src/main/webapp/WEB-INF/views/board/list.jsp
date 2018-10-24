@@ -27,12 +27,16 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-							</tr>
+							<c:forEach items="${list}" var="board">
+								<tr>
+									<td><c:out value="${board.bno}"></c:out></td>
+									<td><a href="read?bno=${board.bno}"><c:out
+												value="${board.title}"></c:out></a></td>
+									<td><c:out value="${board.writer}"></c:out></td>
+									<td><fmt:formatDate value="${board.regdate}"
+											pattern="MM-dd HH:mm"></fmt:formatDate></td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
